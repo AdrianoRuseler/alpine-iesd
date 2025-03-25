@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-GITHUB_URL="https://github.com/AdrianoRuseler/alpine-iesd/tree/main/public-html" 
+GITHUB_URL="https://raw.githubusercontent.com/AdrianoRuseler/alpine-iesd/main/public-html"  # Modified to raw content URL
 TEMP_DIR="/tmp/github_download"
 DEST_DIR="/var/www/html/iesd"
 
@@ -42,7 +42,7 @@ fi
 
 # Download content using wget
 echo "Downloading content from GitHub..."
-wget -r -np -nH --cut-dirs=3 -P "$TEMP_DIR" "$GITHUB_URL"
+wget -r -np -nH --cut-dirs=4 -P "$TEMP_DIR" "$GITHUB_URL"
 
 # Check if download was successful
 if [ $? -ne 0 ]; then
