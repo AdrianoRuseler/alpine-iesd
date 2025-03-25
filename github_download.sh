@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-GITHUB_URL="https://raw.githubusercontent.com/AdrianoRuseler/alpine-iesd/main/public-html"  # Modified to raw content URL
+REPO_URL="https://github.com/AdrianoRuseler/alpine-iesd/archive/refs/heads/main.zip"
 TEMP_DIR="/tmp/github_download"
 DEST_DIR="/var/www/html/iesd"
 
@@ -40,13 +40,24 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Download content using wget
-echo "Downloading content from GitHub..."
-wget -r -np -nH --cut-dirs=4 -P "$TEMP_DIR" "$GITHUB_URL"
+# Download the repository as a zip
+echo "Downloading repository from GitHub..."
+wget -O "$TEMP_DIR/repo.zip" "$REPO_URL"
 
 # Check if download was successful
 if [ $? -ne 0 ]; then
     echo "Error: Download failed"
+    rm -rf "$TEMP_DIR"
+    exit 1
+fi
+
+# Extract the specific folder
+echo "Extracting public-html folder..."
+unzip -o "$TEMP_DIR/repo.zip" "alpine-iesd-main/public-html/*" -d "$TEMP_DIR"
+
+# Check if unzip was successful
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to extract files"
     rm -rf "$TEMP_DIR"
     exit 1
 fi
@@ -61,13 +72,13 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Copy files to destination
+# Move the public-html contents to destination
 echo "Copying files to $DEST_DIR..."
-sudo cp -r "$TEMP_DIR"/* "$DEST_DIR/"
+sudo mv "$TEMP_DIR/alpine-iesd-main/public-html"/* "$DEST_DIR/"
 
-# Check if copy was successful
+# Check if move was successful
 if [ $? -ne 0 ]; then
-    echo "Error: Failed to copy files"
+    echo "Error: Failed to move files"
     rm -rf "$TEMP_DIR"
     exit 1
 fi
@@ -85,7 +96,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Unzip and clean up
+# Unzip and clean up Ruffle
 echo "Extracting Ruffle files..."
 sudo unzip -o "$DEST_DIR/ruffle.zip" -d "$DEST_DIR/ruffle"
 sudo rm "$DEST_DIR/ruffle.zip"
