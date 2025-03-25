@@ -1,0 +1,48 @@
+/* Copyright (c) 2003 CUED Multimedia Group www-mmg@eng.cam.ac.uk */
+
+/* hide from ie5 mac \*/
+html {
+	height: 100%;
+	overflow: hidden;
+}
+
+#flashcontent {
+	height: 70%;
+}
+/* end hide */
+
+body {
+	height: 90%;
+	color: #000;
+	background-color: #e7f8ed;
+}
+
+h1 {
+	font-size: 150%;
+	color: #000;
+	background-color: #ffc;
+}
+
+img {
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: #666;
+}
+
+a:hover {
+	background-color: #ffc;
+}
+
+#footer {
+	background-color: #ffc;
+}
+
+#border {
+	border: 1px solid black;
+}

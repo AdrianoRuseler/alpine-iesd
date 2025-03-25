@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE explanation SYSTEM "explanation.dtd">
+<!-- Copyright (c) 2003 CUED Multimedia Group www-mmg@eng.cam.ac.uk -->
+<explanation>
+	<device name="MOSFET">
+		<state name="VGS=0 VDS=0">
+			<p>The conductivity of the path from source to drain is controlled by applying a voltage between the gate and the body of the semiconductor.</p>
+			<p/>
+			<p>The electric field produced by this voltage is transmitted through an insulating layer of silicon dioxide.</p>
+		</state>
+		<state name="VGS=0 VDS=1">
+			<p>Applying a voltage between drain and source with zero V<sub>GS</sub> will result in (almost) zero current since the p-n junction between the <font color="n-type">n-doped</font> drain and the <font color="p-type">p-doped</font> substrate is reverse biased.</p>
+		</state>
+		<state name="VGS=0 VDS=sat">
+			<p>The only effect of increasing V<sub>DS</sub> is to increase the width of the depletion region around the drain.</p>
+			<p/>
+			<p>The current is not exactly zero. Just as with the semiconductor diode, a small reverse saturation current will flow across the reverse biased p-n junction.</p>
+		</state>
+		<state name="VGS=0 VDS=10">
+			<p>The only effect of increasing V<sub>DS</sub> is to increase the width of the depletion region around the drain.</p>
+			<p/>
+			<p>The current is not exactly zero. Just as with the semiconductor diode, a small reverse saturation current will flow across the reverse biased p-n junction.</p>
+		</state>
+		
+		<state name="VGS=2 VDS=0">
+			<p>Increasing V<sub>GS</sub> produces an electric field that repels holes in the <font color="p-type">p-doped</font> substrate to uncover bound, negatively-charged acceptor atoms. The field also attracts mobile electrons from the <font color="n-type">n-doped</font> source and drain regions and any minority electrons in the substrate. An n-type conducting channel is established beween the souce and drain regions (once V<sub>GS</sub>&gt;V<sub>T</sub>). This is called the <bold>inversion layer</bold>.</p>
+		</state>
+		<state name="VGS=2 VDS=1">
+			<p>Increasing V<sub>DS</sub> means that the voltage between the gate and the channel is smaller at the drain end than at the source end.</p>
+			<p/>
+			<p>With V<sub>GS</sub>=V<sub>T</sub>, the inversion layer is only just established. The channel is therefore <bold>pinched off</bold> by the reduced field strength at the drain end and no current can flow.</p>
+		</state>
+		<state name="VGS=2 VDS=sat">
+			<p>Increasing V<sub>DS</sub> means that the voltage between the gate and the channel is smaller at the drain end than at the source end.</p>
+			<p/>
+			<p>With V<sub>GS</sub>=V<sub>T</sub>, the inversion layer is only just established. The channel is therefore <bold>pinched off</bold> by the reduced field strength at the drain end and no current can flow.</p>
+		</state>
+		<state name="VGS=2 VDS=10">
+			<p>Increasing V<sub>DS</sub> means that the voltage between the gate and the channel is smaller at the drain end than at the source end.</p>
+			<p/>
+			<p>With V<sub>GS</sub>=V<sub>T</sub>, the inversion layer is only just established. The channel is therefore <bold>pinched off</bold> by the reduced field strength at the drain end and no current can flow.</p>
+		</state>
+		
+		<state name="VGS=5 VDS=0">
+			<p>A larger V<sub>GS</sub> increases the number of mobile electrons in the channel, increasing the depth of the inversion layer.</p>
+		</state>
+		<state name="VGS=5 VDS=1">
+			<p>For small V<sub>DS</sub>, the drain current increases linearly with drain-source voltage. As with the JFET, this is called the <font color="linear"><bold>ohmic</bold></font> or <font color="linear"><bold>linear</bold></font> region.</p>
+			<p/>
+			<p>The voltage between the gate and the channel decreases from V<sub>GS</sub> at the source to V<sub>GS</sub>-V<sub>DS</sub> at the drain. As a result the inversion layer is tapered - deeper at the source end than the drain end.</p>
+		</state>
+		<state name="VGS=5 VDS=sat">
+			<p>At the pinch off point the inversion layer depth at the drain is reduced to zero. The voltage between the gate and the drain end of the channel (V<sub>GS</sub>-V<sub>DS</sub>) is now equal to the threshold value V<sub>T</sub>.</p>
+			<p/>
+			<p>The increased channel resistance results in I<sub>D</sub> flattening out in the <font color="saturation"><bold>saturation</bold></font> region.</p>
+		</state>
+		<state name="VGS=5 VDS=10">
+			<p>As V<sub>DS</sub> is increased further, the pinch off point moves towards the source, reducing the effective length of the channel and increasing I<sub>D</sub> slightly.</p>
+			<p/>
+			<p>This effect is called <bold>channel length modulation</bold> and results in a slight linear relationship between I<sub>D</sub> and V<sub>DS</sub> in the saturation region.</p>
+		</state>
+		
+		<state name="VGS=10 VDS=0">
+			<p>A larger V<sub>GS</sub> increases the number of mobile electrons in the channel, increasing the depth of the inversion layer.</p>
+		</state>
+		<state name="VGS=10 VDS=1">
+			<p>The increased depth of the inversion layer reduces the resistance of the channel so the drain current is larger for the same drain-source voltage.</p>
+		</state>
+		<state name="VGS=10 VDS=sat">
+			<p>Saturation is reached with a larger V<sub>DS</sub> since a larger drain-source voltage is required before the depth of the inversion layer at the drain is reduced to zero.</p>
+		</state>
+		<state name="VGS=10 VDS=10">
+			<p>In the saturation region, the MOSFET behaves as a current source, with I<sub>D</sub> independent of V<sub>DS</sub> and controlled by V<sub>GS</sub>.</p>
+		</state>
+	</device>
+</explanation>

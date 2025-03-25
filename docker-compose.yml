@@ -1,0 +1,13 @@
+name: iesd-alpine
+services:
+  httpd:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+      - '8080:80'
+    volumes:     
+      - 'htdocs_data:/usr/local/apache2/htdocs/'
+volumes:
+  htdocs_data:
+    driver: local

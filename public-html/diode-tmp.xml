@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE explanation SYSTEM "explanation.dtd">
+
+<!-- Copyright (c) 2003 CUED Multimedia Group www-mmg@eng.cam.ac.uk -->
+
+<explanation>
+	<device name="Diode">
+		<state name="V=0">
+			<p>When no external bias is applied (V=0), no net current flows across the p-n junction.</p>
+			<p></p>
+			<p>Electrons and holes are moving across the junction but the <font color="diffusion">diffusion current</font> is exactly balanced by the <font color="drift">drift current</font> and a dynamic equilibrium is established.</p>
+		</state>
+		<state name="Depletion">
+			<p>At a p-n junction, electrons diffuse from the <font color="n-type">n-side</font> to the <font color="p-type">p-side</font> leaving behind positive donor ions. Holes diffuse from the <font color="p-type">p-side</font> to the <font color="n-type">n-side</font> leaving behind negative acceptor ions. This creates a <bold>depletion region</bold> with an electric field which opposes further diffusion. The change in potential across the junction results in a <bold>contact potential V<sub>0</sub></bold> between the <font color="p-type">p-side</font> and the <font color="n-type">n-side</font>.</p>
+		</state>
+		<state name="Diffusion">
+			<p>At any moment a few electrons will be energetic enough to overcome the opposing electric field and diffuse across the depletion region from the <font color="n-type">n-side</font> to the <font color="p-type">p-side</font>. Similarly, some holes will manage to diffuse in the opposite direction.</p>
+			<p></p>
+			<p>This current is called the <font color="diffusion"><bold>diffusion current</bold></font>.</p>
+		</state>
+		<state name="Drift">
+			<p>The <font color="n-type">n-side</font> always contains a few thermally generated holes, and the <font color="p-type">p-side</font> a few thermally generated electrons. These minority carriers will be swept across the junction by the electric field in the depletion region.</p>
+			<p></p>
+			<p>This current is called the <font color="drift"><bold>drift current</bold></font>.</p>
+		</state>
+		<state name="V=-1">
+			<p>Making the <font color="n-type">n-side</font> more positive than the <font color="p-type">p-side</font> (V&lt;0) pulls the depletion region wider. The electric field across the junction increases. This significantly reduces the <font color="diffusion">diffusion current</font> but does not affect the <font color="drift">drift current</font>.</p>
+			<p></p>
+			<p>This situation is called <bold>reverse biasing</bold> and the net current I<sub>0</sub> is called the <bold>reverse saturation current</bold>.</p>
+		</state>
+		<state name="V=-2">
+			<p>As the voltage is made more negative, I<sub>0</sub> remains almost constant at a few nA.</p>
+			<p></p>
+			<p>However, if the reverse bias voltage goes beyond a critical voltage of around -150V, <bold>Zener breakdown</bold> occurs and the reverse current suddenly increases dramatically.</p>
+		</state>
+		<state name="V=0,6">
+			<p>Making the <font color="p-type">p-side</font> more positive than the <font color="n-type">n-side</font> (V&gt;0) reduces the width of the depletion region. The electric field across the junction decreases. This significantly increases the <font color="diffusion">diffusion current</font> (since more holes and electrons can now overcome the field) but does not affect the <font color="drift">drift current</font>.</p>
+			<p></p>
+			<p>This situation is called <bold>forward biasing</bold>.</p>
+		</state>
+		<state name="V=1">
+			<p>As the voltage is increased, the width of the depletion region is reduced to zero.</p>
+			<p></p>
+			<p>Once the voltage is greater than a threshold of about 0.6V, the current starts to increase rapidly. With V=1V, the current is about 200mA.</p>
+		</state>
+	</device>
+</explanation>

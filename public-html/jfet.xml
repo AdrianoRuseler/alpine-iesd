@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE explanation SYSTEM "explanation.dtd">
+<!-- Copyright (c) 2003 CUED Multimedia Group www-mmg@eng.cam.ac.uk -->
+<explanation>
+	<device name="JFET">
+		<state name="VGS=0 VDS=0">
+			<p>Just as with the semiconductor diode, there is a depletion region across the p-n junction formed between the gate and the channel.</p>
+			<p/>
+			<p>Because the gate is much more heavily doped than the channel, the depletion region extends mainly into the channel.</p>
+		</state>
+		<state name="VGS=0 VDS=2">
+			<p>Initially there will be a linear relation between the drain current and the drain-source voltage. This is called the <font color="linear"><bold>ohmic</bold></font> or <font color="linear"><bold>linear</bold></font> region.</p>
+			<p>As V<sub>DS</sub> increases the depletion region extends further at the drain end of the channel. Being nearer the drain the potential is higher at this end, resulting in a larger reverse bias across the p-n junction.</p>
+		</state>
+		<state name="VGS=0 VDS=sat">
+			<p>I<sub>D</sub> does not increase indefinitely with V<sub>DS</sub>, and eventually flattens out in the <font color="saturation"><bold>saturation</bold></font> region.</p>
+			<p/>
+			<p>It is not possible for the depletion region to completely constrict the channel because then the drain current would vanish and there would no longer be a higher reverse bias at the drain end.</p>
+		</state>
+		<state name="VGS=0 VDS=10">
+			<p>An equilibrium is established and the drain current flattens off.</p>
+		</state>
+		
+		<state name="VGS=-0,5 VDS=0">
+			<p>The extent of the depletion region is determined by V<sub>GS</sub>. As V<sub>GS</sub> becomes more negative, the depletion region constricts more of the channel, whose resistance increases.</p>
+		</state>
+		<state name="VGS=-0,5 VDS=2">
+			<p>Making V<sub>GS</sub> more negative increases the resistance so the drain current is smaller for the same drain-source voltage.</p>
+		</state>
+		<state name="VGS=-0,5 VDS=sat">
+			<p>Saturation is reached with a lower V<sub>DS</sub> since the more negative V<sub>GS</sub> means the channel is already more constricted.</p>
+		</state>
+		<state name="VGS=-0,5 VDS=10">
+			<p>In the saturation region, the more negative V<sub>GS</sub> has reduced the width of the channel at the source end. This increases the resistance and lowers the drain current.</p>
+		</state>
+		
+		<state name="VGS=-1 VDS=0">
+			<p>The extent of the depletion region is determined by V<sub>GS</sub>. As V<sub>GS</sub> becomes more negative, the depletion region constricts more of the channel, whose resistance increases.</p>
+		</state>
+		<state name="VGS=-1 VDS=2">
+			<p>Making V<sub>GS</sub> more negative increases the resistance so the drain current is smaller for the same drain-source voltage.</p>
+		</state>
+		<state name="VGS=-1 VDS=sat">
+			<p>Saturation is reached with a lower V<sub>DS</sub> since the more negative V<sub>GS</sub> means the channel is already more constricted.</p>
+		</state>
+		<state name="VGS=-1 VDS=10">
+			<p>In the saturation region, the more negative V<sub>GS</sub> has reduced the width of the channel at the source end. This increases the resistance and lowers the drain current.</p>
+		</state>
+		
+		<state name="VGS=-2 VDS=0">
+			<p>If V<sub>GS</sub> is made sufficiently negative, the depletion region completely constricts the channel.</p>
+			<p/>
+			<p>This happens when V<sub>GS</sub> = V<sub>P</sub>, the <bold>pinch-off voltage</bold>.</p>
+		</state>
+		<state name="VGS=-2 VDS=2">
+			<p>Once V<sub>GS</sub> is more negative than the pinch-off voltage, I<sub>D</sub> remains at zero for all values of V<sub>DS</sub>. The channel is completely constricted so that no current can flow.</p>
+		</state>
+		<state name="VGS=-2 VDS=sat">
+			<p>Once V<sub>GS</sub> is more negative than the pinch-off voltage, I<sub>D</sub> remains at zero for all values of V<sub>DS</sub>. The channel is completely constricted so that no current can flow.</p>
+		</state>
+		<state name="VGS=-2 VDS=10">
+			<p>Once V<sub>GS</sub> is more negative than the pinch-off voltage, I<sub>D</sub> remains at zero for all values of V<sub>DS</sub>. The channel is completely constricted so that no current can flow.</p>
+		</state>
+	</device>
+</explanation>

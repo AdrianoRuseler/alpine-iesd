@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE quiz SYSTEM "quiz.dtd">
+<!-- Copyright (c) 2003 CUED Multimedia Group www-mmg@eng.cam.ac.uk -->
+<quiz>
+	<device name="Diode">
+		<question correctChoice="1" explanationState="V=0">
+			<text>When no external bias is applied, do electrons move across the p-n junction?</text>
+			<choice>Yes</choice>
+			<choice>No</choice>
+		</question>
+		<question correctChoice="2" explanationState="Diffusion">
+			<text>In which direction do electrons <bold>diffuse</bold> at a p-n junction?</text>
+			<choice>p-side to n-side</choice>
+			<choice>n-side to p-side</choice>
+		</question>
+		<question correctChoice="1" explanationState="Drift">
+			<text>In which direction do electrons <bold>drift</bold> at a p-n junction?</text>
+			<choice>p-side to n-side</choice>
+			<choice>n-side to p-side</choice>
+		</question>
+		<question correctChoice="1" explanationState="V=0,6">
+			<text>What effect does forward biasing have on the width of the depletion region?</text>
+			<choice>Reduces the width</choice>
+			<choice>No effect on the width</choice>
+			<choice>Increases the width</choice>
+		</question>
+		<question correctChoice="2" explanationState="V=0,6">
+			<text>What effect does forward biasing have on the drift current?</text>
+			<choice>Reduces the drift current</choice>
+			<choice>No effect on the drift current</choice>
+			<choice>Increases the drift current</choice>
+		</question>
+		<question correctChoice="1" explanationState="V=-1">
+			<text>What effect does reverse biasing have on the diffusion current?</text>
+			<choice>Reduces the diffusion current</choice>
+			<choice>No effect on the diffusion current</choice>
+			<choice>Increases the diffusion current</choice>
+		</question>
+	</device>
+	<device name="JFET">
+		<question correctChoice="2" explanationState="VGS=0 VDS=2">
+			<text>Is the reverse bias between the p-n junction higher at the source end or the drain end?</text>
+			<choice>Source end</choice>
+			<choice>Drain end</choice>
+		</question>
+		<question correctChoice="3" explanationState="VGS=-0,5 VDS=0">
+			<text>What effect does making V<sub>GS</sub> more negative have on the resistance of the channel?</text>
+			<choice>Reduces the resistance</choice>
+			<choice>No effect on the resistance</choice>
+			<choice>Increases the resistance</choice>
+		</question>
+		<question correctChoice="1" explanationState="VGS=-0,5 VDS=sat">
+			<text>What effect does making V<sub>GS</sub> more negative have on the saturation V<sub>DS</sub>?</text>
+			<choice>Reduces the saturation V<sub>DS</sub></choice>
+			<choice>No effect on the saturation V<sub>DS</sub></choice>
+			<choice>Increases the saturation V<sub>DS</sub></choice>
+		</question>
+		<question correctChoice="1" explanationState="VGS=-0,5 VDS=10">
+			<text>What effect does making V<sub>GS</sub> more negative have on the saturation I<sub>D</sub>?</text>
+			<choice>Reduces the saturation I<sub>D</sub></choice>
+			<choice>No effect on the saturation I<sub>D</sub></choice>
+			<choice>Increases the saturation I<sub>D</sub></choice>
+		</question>
+		<question correctChoice="2" explanationState="VGS=-2 VDS=2">
+			<text>What effect does increasing V<sub>DS</sub> have on I<sub>D</sub> when V<sub>GS</sub> is more negative than the pinch-off voltage?</text>
+			<choice>Reduces I<sub>D</sub></choice>
+			<choice>No effect on I<sub>D</sub></choice>
+			<choice>Increases I<sub>D</sub></choice>
+		</question>
+		<question correctChoice="1" explanationState="VGS=0 VDS=sat">
+			<text>What has most effect on I<sub>D</sub> in the saturation region?</text>
+			<choice>V<sub>GS</sub></choice>
+			<choice>V<sub>DS</sub></choice>
+		</question>
+	</device>
+	<device name="MOSFET">
+		<question correctChoice="2" explanationState="VGS=0 VDS=1">
+			<text>Is it possible to obtain a large I<sub>D</sub> when V<sub>GS</sub>=0V?</text>
+			<choice>Yes</choice>
+			<choice>No</choice>
+		</question>
+		<question correctChoice="1" explanationState="VGS=2 VDS=0">
+			<text>What is the type of the inversion layer?</text>
+			<choice>n-type</choice>
+			<choice>p-type</choice>
+		</question>
+		<question correctChoice="2" explanationState="VGS=2 VDS=1">
+			<text>Is it possible to obtain a large I<sub>D</sub> when V<sub>GS</sub>=V<sub>T</sub>?</text>
+			<choice>Yes</choice>
+			<choice>No</choice>
+		</question>
+		<question correctChoice="3" explanationState="VGS=5 VDS=0">
+			<text>What effect does increasing V<sub>GS</sub> have on the depth of the inversion layer?</text>
+			<choice>Reduces the depth</choice>
+			<choice>No effect on the depth</choice>
+			<choice>Increases the depth</choice>
+		</question>
+		<question correctChoice="1" explanationState="VGS=5 VDS=1">
+			<text>Which end of the inversion layer is deeper?</text>
+			<choice>Source end</choice>
+			<choice>Drain end</choice>
+		</question>
+		<question correctChoice="2" explanationState="VGS=5 VDS=sat">
+			<text>At saturation, what is the voltage between the gate and the drain end of the channel?</text>
+			<choice>0V</choice>
+			<choice>V<sub>T</sub></choice>
+			<choice>V<sub>GS</sub></choice>
+			<choice>V<sub>DS</sub></choice>
+		</question>
+		<question correctChoice="1" explanationState="VGS=10 VDS=1">
+			<text>What effect does increasing V<sub>GS</sub> have on the resistance of the channel?</text>
+			<choice>Reduces the resistance</choice>
+			<choice>No effect on the resistance</choice>
+			<choice>Increases the resistance</choice>
+		</question>
+		<question correctChoice="3" explanationState="VGS=10 VDS=sat">
+			<text>What effect does increasing V<sub>GS</sub> have on the saturation V<sub>DS</sub>?</text>
+			<choice>Reduces the saturation V<sub>DS</sub></choice>
+			<choice>No effect on the saturation V<sub>DS</sub></choice>
+			<choice>Increases the saturation V<sub>DS</sub></choice>
+		</question>
+		<question correctChoice="1" explanationState="VGS=10 VDS=10">
+			<text>What has most effect on I<sub>D</sub> in the saturation region?</text>
+			<choice>V<sub>GS</sub></choice>
+			<choice>V<sub>DS</sub></choice>
+		</question>
+		<question correctChoice="2" explanationState="VGS=5 VDS=10">
+			<text>What effect does increasing V<sub>DS</sub> have on I<sub>D</sub> in the saturation region?</text>
+			<choice>No effect on I<sub>D</sub></choice>
+			<choice>Slight increase in I<sub>D</sub></choice>
+			<choice>Large increase in I<sub>D</sub></choice>
+		</question>
+	</device>
+</quiz>
