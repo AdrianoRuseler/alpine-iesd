@@ -5,6 +5,22 @@ GITHUB_URL="https://github.com/AdrianoRuseler/alpine-iesd/tree/main/public-html"
 TEMP_DIR="/tmp/github_download"
 DEST_DIR="/var/www/html/iesd"
 
+# Function to check if a command exists
+check_command() {
+    if ! command -v "$1" &> /dev/null; then
+        echo "Error: $1 is required but not installed."
+        echo "Please install it using: sudo apt install $1"
+        exit 1
+    fi
+}
+
+# Verify required commands
+echo "Checking required dependencies..."
+check_command "wget"
+check_command "curl"
+check_command "jq"
+check_command "unzip"
+
 # If DEST_DIR exists, clear it
 if [ -d "$DEST_DIR" ]; then
     echo "Clearing existing $DEST_DIR..."
