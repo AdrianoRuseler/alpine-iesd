@@ -1,5 +1,4 @@
-# alpine-iesd
-Interactive Explanations for Semiconductor Devices.
+## Interactive Explanations for Semiconductor Devices.
 
 - https://www-g.eng.cam.ac.uk/mmg/teaching/linearcircuits/
 - https://www-g.eng.cam.ac.uk/mmg/teaching/
