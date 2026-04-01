@@ -1,9 +1,10 @@
 name: iesd-alpine
 services:
   httpd:
-    build:
-        context: .
-        dockerfile: Dockerfile
+    #build:
+    #    context: .
+    #    dockerfile: Dockerfile
+    image: ruseler/alpine-iesd:latest
     ports:
       - '8080:80'
     volumes:     
