@@ -1,0 +1,21 @@
+# === Builder stage ===
+FROM httpd:alpine AS builder
+
+RUN apk add --no-cache curl jq unzip
+
+RUN mkdir -p /ruffle && \
+    curl -s https://api.github.com/repos/ruffle-rs/ruffle/releases/latest | \
+    jq -r '.assets[] | select(.name | contains("web-selfhosted.zip")) | .browser_download_url' | \
+    xargs curl -L -o /ruffle.zip && \
+    unzip /ruffle.zip -d /ruffle && \
+    rm /ruffle.zip
+
+# === Final stage ===
+FROM httpd:alpine
+
+COPY --from=builder /ruffle /usr/local/apache2/htdocs/ruffle
+COPY ./public-html/ /usr/local/apache2/htdocs/
+
+# Optional: Run as non-root (good practice)
+#RUN adduser -D -u 1000 apacheuser && chown -R apacheuser /usr/local/apache2/htdocs
+#USER apacheuser

@@ -1,21 +1,20 @@
-FROM httpd:alpine
+# === Builder ===
+FROM nginx:alpine AS builder
 
-# Install necessary tools
-RUN apk add --no-cache curl jq
+RUN apk add --no-cache curl jq unzip
 
-# Copy html content
-COPY ./public-html/ /usr/local/apache2/htdocs/
+RUN mkdir -p /ruffle && \
+    curl -s https://api.github.com/repos/ruffle-rs/ruffle/releases/latest | \
+    jq -r '.assets[] | select(.name | contains("web-selfhosted.zip")) | .browser_download_url' | \
+    xargs curl -L -o /ruffle.zip && \
+    unzip /ruffle.zip -d /ruffle && \
+    rm /ruffle.zip
 
-# Create the destination directory
-RUN mkdir -p /usr/local/apache2/htdocs/ruffle
+# === Final Image ===
+FROM nginx:alpine
 
-# Download the latest web-selfhosted zip
-RUN curl -s https://api.github.com/repos/ruffle-rs/ruffle/releases | \
-    jq -r '.[0].assets[] | select(.name | contains("web-selfhosted.zip")) | .browser_download_url' | \
-    xargs curl -L -o /usr/local/apache2/htdocs/ruffle/ruffle.zip
+COPY --from=builder /ruffle /usr/share/nginx/html/ruffle
+COPY ./public-html/ /usr/share/nginx/html/
 
-# Optional: If you need to unzip the file
-RUN apk add --no-cache unzip && \
-     unzip /usr/local/apache2/htdocs/ruffle/ruffle.zip -d /usr/local/apache2/htdocs/ruffle && \
-     rm /usr/local/apache2/htdocs/ruffle/ruffle.zip && \
-     apk del unzip
+# Copy custom config
+COPY nginx.conf /etc/nginx/conf.d/default.conf

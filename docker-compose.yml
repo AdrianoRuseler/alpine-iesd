@@ -1,14 +1,14 @@
 name: iesd-alpine
 services:
   httpd:
-    #build:
-    #    context: .
-    #    dockerfile: Dockerfile
-    image: ruseler/alpine-iesd:latest
+    build:
+        context: .
+        dockerfile: Dockerfile
+    #image: ruseler/alpine-iesd:latest
     ports:
       - '8080:80'
     volumes:     
-      - 'htdocs_data:/usr/local/apache2/htdocs/'
+     - 'htdocs_data:/usr/share/nginx/html/'
 volumes:
   htdocs_data:
     driver: local
